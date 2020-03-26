@@ -13,7 +13,7 @@ html {
 
 body {
   /* for test only! */
-  min-height: 200vh;
+  min-height: 250vh;
 }
 
 .wrapper {
@@ -23,13 +23,13 @@ body {
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  font-size: 1.8rem;
   background-color: rgba(0, 0, 0, 0.05);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: 1s;
   z-index: 2;
 }
 
@@ -43,6 +43,7 @@ body {
   padding: 15px 10px;
   margin: 0 50px;
   text-align: center;
+  font-size: 1.8rem;
   text-transform: uppercase;
   color: rgba(24, 24, 24, 0.6);
   cursor: pointer;
@@ -69,6 +70,10 @@ body {
   width: 100%;
   left: 0;
   background: white;
+}
+
+.menu-bcg {
+  background-color: #45bdcd;
 }
 
 header {
