@@ -9,11 +9,25 @@
 html {
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
   /* for test only! */
   min-height: 250vh;
+}
+
+section {
+  position: relative;
+}
+
+section p {
+  position: absolute;
+  font-size: 5rem;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .wrapper {
@@ -75,10 +89,6 @@ body {
   background: white;
 }
 
-.menu-small {
-  background-color: #45bdcd;
-}
-
 .menu-small ul li {
   font-size: 1.5rem;
 }
@@ -89,7 +99,7 @@ body {
   top: 5%;
   right: 10%;
   font-size: 2.5rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   width: 40px;
   line-height: 40px;
   text-align: center;
@@ -97,6 +107,7 @@ body {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
+  transition: 0.3s;
   z-index: 3;
 }
 
@@ -152,27 +163,27 @@ header {
 }
 
 .about {
-  background-color: darkorchid;
+  background-color: lightgray;
   min-height: 100vh;
 }
 
 .skills {
-  background-color: lightgreen;
+  background-color: white;
   min-height: 100vh;
 }
 
 .portfolio {
-  background-color: lightskyblue;
+  background-color: lightgray;
   min-height: 100vh;
 }
 
 .contact {
-  background-color: lightslategray;
+  background-color: white;
   min-height: 50vh;
 }
 
 footer {
-  background-color: darkorange;
+  background-color: rgb(31, 31, 31);
   min-height: 10vh;
 }
 
@@ -194,16 +205,33 @@ footer {
   }
   .fas.fa-bars {
     display: none;
+    transform: scaleY(0);
   }
-  .fas.fa-bars.active {
-    display: inline-block;
-  }
+
   .fas.fa-times {
     display: none;
+    transform: rotate(0);
   }
   .fas.fa-times.active {
     display: inline-block;
+    animation: rotate 0.3s;
     color: white;
+  }
+  .fas.fa-bars.active {
+    display: inline-block;
+    animation: scale 0.3s both;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes scale {
+    100% {
+      transform: scaleY(1);
+    }
   }
 
   .menu ul {
