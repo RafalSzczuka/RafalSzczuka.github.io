@@ -20,7 +20,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
+
+/* ------MENU------ */
 
 .menu {
   position: fixed;
@@ -40,10 +43,10 @@ body {
 }
 .menu ul li {
   position: relative;
-  padding: 15px 10px;
-  margin: 0 50px;
+  padding: 1% 10px;
+  margin: 0px 50px;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   text-transform: uppercase;
   color: rgba(24, 24, 24, 0.6);
   cursor: pointer;
@@ -58,7 +61,7 @@ body {
   content: "";
   display: block;
   position: absolute;
-  bottom: 11px;
+  bottom: 20%;
   left: 50%;
   height: 2px;
   width: 0;
@@ -72,9 +75,32 @@ body {
   background: white;
 }
 
-.menu-bcg {
+.menu-small {
   background-color: #45bdcd;
 }
+
+.menu-small ul li {
+  font-size: 1.5rem;
+}
+
+.burger {
+  /* display: none; */
+  position: fixed;
+  top: 5%;
+  right: 10%;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* ------HEADER------ */
 
 header {
   position: relative;
@@ -142,12 +168,31 @@ footer {
 }
 
 @media (max-width: 1024px) {
+  .menu {
+    background-color: #45bdcd;
+    height: 100%;
+    opacity: 0;
+  }
   .menu ul {
     flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .menu ul li {
-    margin: 0;
+    margin: 2% 0;
+    padding: 10% 0;
   }
+
+  .menu ul li::after {
+    bottom: 30%;
+  }
+
+  header {
+    background-position-x: -60%;
+  }
+
   .welcome {
     text-align: center;
     top: 50%;
@@ -168,4 +213,8 @@ footer {
     font-size: 3rem;
     font-weight: lighter;
   }
+}
+
+.active {
+  display: block;
 }

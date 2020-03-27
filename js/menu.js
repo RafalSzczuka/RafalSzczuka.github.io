@@ -8,9 +8,9 @@ const menuUl = document.querySelector(".menu ul li");
 // }
 
 document.addEventListener("scroll", function() {
-  if (window.scrollY > 200) {
-    menuBar.classList.add("menu-bcg");
+  if (window.scrollY > 500 && window.innerWidth > 1024) {
+    menuBar.classList.add("menu-small");
   } else {
-    menuBar.classList.remove("menu-bcg");
+    menuBar.classList.remove("menu-small");
   }
 });
