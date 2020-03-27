@@ -84,7 +84,7 @@ body {
 }
 
 .burger {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 5%;
   right: 10%;
@@ -98,6 +98,10 @@ body {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   z-index: 3;
+}
+
+.burger.active {
+  display: block;
 }
 
 /* ------HEADER------ */
@@ -149,23 +153,30 @@ header {
 
 .about {
   background-color: darkorchid;
+  min-height: 100vh;
 }
 
 .skills {
   background-color: lightgreen;
+  min-height: 100vh;
 }
 
 .portfolio {
   background-color: lightskyblue;
+  min-height: 100vh;
 }
 
 .contact {
   background-color: lightslategray;
+  min-height: 50vh;
 }
 
 footer {
   background-color: darkorange;
+  min-height: 10vh;
 }
+
+/* ------MOBILE------ */
 
 @media (max-width: 1024px) {
   .menu {
@@ -173,6 +184,28 @@ footer {
     height: 100%;
     opacity: 0;
   }
+
+  .menu.active {
+    opacity: 1;
+  }
+
+  .burger {
+    display: block;
+  }
+  .fas.fa-bars {
+    display: none;
+  }
+  .fas.fa-bars.active {
+    display: inline-block;
+  }
+  .fas.fa-times {
+    display: none;
+  }
+  .fas.fa-times.active {
+    display: inline-block;
+    color: white;
+  }
+
   .menu ul {
     flex-direction: column;
     position: absolute;
@@ -213,8 +246,4 @@ footer {
     font-size: 3rem;
     font-weight: lighter;
   }
-}
-
-.active {
-  display: block;
 }

@@ -1,5 +1,7 @@
 const menuBar = document.querySelector(".menu");
-const menuUl = document.querySelector(".menu ul li");
+const burgerBtn = document.querySelector(".burger");
+const burgerOn = document.querySelector(".fas.fa-bars");
+const burgerOff = document.querySelector(".fas.fa-times");
 
 // function showUp(element, whenScrollDistance) {
 //   if (document.scrollY > whenScrollDistance) {
@@ -13,4 +15,10 @@ document.addEventListener("scroll", function() {
   } else {
     menuBar.classList.remove("menu-small");
   }
+});
+
+burgerBtn.addEventListener("click", function() {
+  menuBar.classList.toggle("active");
+  burgerOn.classList.toggle("active");
+  burgerOff.classList.toggle("active");
 });
