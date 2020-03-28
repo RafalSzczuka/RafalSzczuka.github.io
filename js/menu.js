@@ -73,8 +73,7 @@ menuContact.addEventListener("click", function() {
 
 // arrow up show up implementation
 window.addEventListener("scroll", function() {
-  const currentScrollPosition = window.scrollY;
-  if (currentScrollPosition >= aboutSectionFromTop / 2) {
+  if (window.scrollY >= aboutSectionFromTop / 2) {
     arrowUp.classList.add("active");
   } else {
     arrowUp.classList.remove("active");

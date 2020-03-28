@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+/* variables declaration */
+:root {
+  --photoSize: 300px;
+}
+/* --------------------- */
+
 html {
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
@@ -21,14 +27,21 @@ section {
   position: relative;
 }
 
-section p {
+/* ----------------TEMPORARY---------------- */
+.temporary p {
+  font-size: 4.5rem;
   position: absolute;
-  font-size: 5rem;
-  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+footer {
+  font-size: 2rem;
+  line-height: 10vh;
+  color: white;
+  text-align: center;
+}
+/* ----------------TEMPORARY---------------- */
 
 .wrapper {
   display: flex;
@@ -193,10 +206,80 @@ header {
   background-color: rgba(0, 0, 100, 0.1);
 }
 
+/* ------ABOUT SECTION------ */
+
 .about {
-  background-color: lightgray;
-  min-height: 100vh;
+  display: flex;
+  background-color: rgb(228, 228, 228);
 }
+
+.column {
+  position: relative;
+  flex-grow: 1;
+  min-width: 320px;
+  height: 100vh;
+}
+
+.column:first-child {
+  /* background-color: lightcoral; */
+}
+.column:last-child {
+  /* background-color: lightgreen; */
+}
+
+.about h1 {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 80px 0;
+  color: rgb(39, 39, 39);
+}
+
+.photo {
+  position: absolute;
+  top: calc(8% + 92px);
+  left: calc(50% - var(--photoSize) / 2);
+  background-image: url(../img/photo-placeholder.png);
+  background-position: center;
+  background-size: cover;
+  width: var(--photoSize);
+  height: var(--photoSize);
+  border-radius: 50%;
+  border: 6px solid whitesmoke;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about p {
+  position: absolute;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-me p {
+  left: 0;
+  top: calc(12% + var(--photoSize) + 92px);
+}
+
+.placeholder {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  background-color: cadetblue;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.interests p {
+  bottom: 40px;
+}
+
+/* ------SKILLS SECTION------ */
 
 .skills {
   background-color: white;
@@ -221,6 +304,7 @@ footer {
 /* ------MOBILE------ */
 
 @media (max-width: 1024px) {
+  /* menu */
   .menu {
     background-color: #45bdcd;
     height: 100%;
@@ -295,6 +379,7 @@ footer {
     bottom: 30%;
   }
 
+  /* header */
   header {
     background-position-x: -60%;
   }
@@ -318,5 +403,36 @@ footer {
   .welcome h2 {
     font-size: 3rem;
     font-weight: lighter;
+  }
+
+  /* about section */
+  :root {
+    --photoSize: 200px;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about h1 {
+    font-size: 2.2rem;
+    margin: 20px 0;
+  }
+
+  .photo {
+    top: calc(4% + 42px);
+  }
+
+  .about p {
+    font-size: 1.5rem;
+    padding: 0 20px;
+  }
+
+  .about-me p {
+    top: calc(8% + var(--photoSize) + 42px);
+  }
+
+  .interests p {
+    bottom: 25px;
   }
 }
