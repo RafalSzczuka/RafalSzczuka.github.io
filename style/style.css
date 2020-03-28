@@ -46,7 +46,7 @@ section p {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-  transition: 1s;
+  transition: 0.5s;
   z-index: 2;
 }
 
@@ -194,10 +194,12 @@ footer {
   .menu {
     background-color: #45bdcd;
     height: 100%;
+    z-index: 0;
     opacity: 0;
   }
 
   .menu.active {
+    z-index: 2;
     opacity: 1;
   }
 
