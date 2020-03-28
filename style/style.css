@@ -140,7 +140,7 @@ section p {
   transform: scale(1);
 }
 
-.arrowup:hover {
+.arrowup.active:hover {
   background-color: rgba(0, 0, 0, 0.5);
   color: rgba(255, 255, 255, 1);
   transform: scale(1.1);
@@ -237,6 +237,12 @@ footer {
 
   .arrowup {
     right: 10%;
+  }
+
+  .arrowup.active:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(1);
   }
 
   .burger {
