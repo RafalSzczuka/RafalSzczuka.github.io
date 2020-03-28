@@ -3,7 +3,11 @@ const menuBar = document.querySelector(".menu");
 const burgerBtn = document.querySelector(".burger");
 const burgerOn = document.querySelector(".fas.fa-bars");
 const burgerOff = document.querySelector(".fas.fa-times");
+const arrowUp = document.querySelector(".arrowup");
 
+const currentScrollPosition = window.scrollY;
+
+// menu items selection
 const menuAbout = document.getElementById("about");
 const menuSkills = document.getElementById("skills");
 const menuPortfolio = document.getElementById("portfolio");
@@ -49,6 +53,7 @@ burgerBtn.addEventListener("click", function() {
   burgerToggler();
 });
 
+// scroll from menu to sections implementation
 menuAbout.addEventListener("click", function() {
   window.scrollTo(0, aboutSectionFromTop);
   menuToggler();
@@ -64,4 +69,19 @@ menuPortfolio.addEventListener("click", function() {
 menuContact.addEventListener("click", function() {
   window.scrollTo(0, contactSectionFromTop);
   menuToggler();
+});
+
+// arrow up show up implementation
+window.addEventListener("scroll", function() {
+  const currentScrollPosition = window.scrollY;
+  if (currentScrollPosition >= aboutSectionFromTop / 2) {
+    arrowUp.classList.add("active");
+  } else {
+    arrowUp.classList.remove("active");
+  }
+});
+
+// scroll to top after arrow up is clicked
+arrowUp.addEventListener("click", function() {
+  window.scrollTo(0, 0);
 });

@@ -46,6 +46,7 @@ section p {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  transform: scaleY(1);
   transition: 0.5s;
   z-index: 2;
 }
@@ -112,8 +113,37 @@ section p {
   z-index: 3;
 }
 
+.arrowup {
+  display: block;
+  position: fixed;
+  top: calc(95% - 40px);
+  right: 3%;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 3;
+  transform: scale(0);
+}
+
 .burger.active {
   display: block;
+}
+
+.arrowup.active {
+  transform: scale(1);
+}
+
+.arrowup:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
 }
 
 /* ------HEADER------ */
@@ -195,12 +225,18 @@ footer {
     background-color: #45bdcd;
     height: 100%;
     z-index: 0;
+    transform: scaleY(0);
     opacity: 0;
   }
 
   .menu.active {
+    transform: scaleY(1);
     z-index: 2;
     opacity: 1;
+  }
+
+  .arrowup {
+    right: 10%;
   }
 
   .burger {
