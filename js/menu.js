@@ -83,4 +83,5 @@ window.addEventListener("scroll", function() {
 // scroll to top after arrow up is clicked
 arrowUp.addEventListener("click", function() {
   window.scrollTo(0, 0);
+  menuToggler();
 });
