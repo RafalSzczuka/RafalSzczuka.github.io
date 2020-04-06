@@ -109,7 +109,10 @@ footer {
 }
 
 .menu-small ul {
-  background-color: rgba(32, 87, 149, 0.164);
+  background-color: #41c6d0;
+}
+.menu .menu-small {
+  transition: 1s;
 }
 
 .menu-small ul li {
@@ -171,11 +174,19 @@ footer {
 /* ------HEADER------ */
 
 header {
+  background-color: #41c6d0;
   position: relative;
+  height: 100vh;
+}
+
+.header-background {
+  height: 100%;
+  width: 100%;
   background-image: url(../img/header-background.jpg);
   background-position: left;
   background-size: cover;
-  height: 100vh;
+  transition: 0.5s;
+  opacity: 1;
 }
 
 .welcome {
@@ -184,7 +195,14 @@ header {
   top: 30%;
   color: white;
   text-shadow: 2px 2px 2px gray;
+  transition: 1s;
   z-index: 1;
+  opacity: 1;
+}
+
+.header-background.fade,
+.welcome.fade {
+  opacity: 0;
 }
 
 .welcome h1 {
